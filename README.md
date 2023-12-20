@@ -1,1 +1,3 @@
 # JAC-OOP-LadderAndSnake
+
+In this part, you need to create a class called LadderAndSnake. A LadderAndSnake object has a board of 10x10 and a number of players attached to it, which is initialized at the creation time of the object. The number of players must be between 2 and 4 inclusively. The number of players must be set through the use of a parameterized constructor of the class. In addition, the board itself is set as shown in Figure 1 below.
