@@ -55,7 +55,7 @@ public class LadderAndSnake {
 		System.out.println("********************************************");
 		System.out.println("Enter the number of players for your game - Number must be between 2 and 4 lunclusively:");
 		Scanner sc = new Scanner(System.in);
-		int num = sc.nextInt();
+		int num = checkInputIntType(sc);
 		int retry = 1;
 		while (num < 2 || num > 4) {
 			if (retry == 4) {
@@ -65,7 +65,7 @@ public class LadderAndSnake {
 			}
 			System.out.println(
 					"Bad attempt " + retry + " -Invalid # of players. Please enter a # between 2 and 4 inclusively:");
-			num = sc.nextInt();
+			num = checkInputIntType(sc);
 			retry++;
 		}
 		Player[] arr = new Player[num];
@@ -232,5 +232,22 @@ public class LadderAndSnake {
 				playerArray[i] = p;
 			}
 		}
+	}
+	
+	private static int checkInputIntType( Scanner sc) {
+		int max = 0;
+		boolean valid = false;
+		while (!valid) {
+			System.out.println("Please input a positive integer: ");
+			try {
+				max = sc.nextInt();
+				valid = true;
+			} catch (Exception e) {
+				System.out.println("Invalid input value, please input a valid positive integer number!");
+				sc.next();
+
+			}
+		}
+		return max;
 	}
 }
